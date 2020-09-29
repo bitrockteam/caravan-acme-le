@@ -1,12 +1,8 @@
 provider "acme" {
-  server_url = var.le_endpoint
+  server_url    = var.le_endpoint
 }
 
 resource "tls_private_key" "private_key" {
-  algorithm = "RSA"
-}
-
-resource "tls_private_key" "cert_private_key" {
   algorithm = "RSA"
 }
 
@@ -19,7 +15,7 @@ resource "acme_registration" "reg" {
 resource "tls_cert_request" "req" {
 
   key_algorithm   = "RSA"
-  private_key_pem = tls_private_key.cert_private_key.private_key_pem
+  private_key_pem = var.private_key
   subject {
     common_name = "*.${var.common_name}"
   }

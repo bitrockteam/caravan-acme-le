@@ -15,5 +15,8 @@ variable "dns_provider" {
     type = string
 }
 variable "le_endpoint" {
-    type = string
+    default = ""
+}
+variable "private_key" {
+    default = ""
 }
