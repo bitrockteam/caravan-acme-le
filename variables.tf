@@ -1,22 +1,22 @@
 variable "project_id" {
-    type = string
+  type = string
 }
 variable "google_account_file" {
-    type = string
+  type = string
 }
 variable "common_name" {
-    type = string
+  type = string
 }
 variable "email_address" {
-    type = string
-    default = "letsencrypt@example.it"
+  type    = string
+  default = "letsencrypt@example.it"
 }
 variable "dns_provider" {
-    type = string
+  type = string
 }
 variable "le_endpoint" {
-    default = ""
+  default = ""
 }
 variable "private_key" {
-    default = ""
+  default = ""
 }
