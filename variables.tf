@@ -28,3 +28,6 @@ variable "aws_profile" {
 variable "aws_region" {
   default = ""
 }
+variable "aws_zone_id" {
+  default = ""
+}

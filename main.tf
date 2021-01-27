@@ -46,6 +46,7 @@ resource "acme_certificate" "certificate" {
       AWS_REGION = var.aws_region
       AWS_POLLING_INTERVAL = 240
       AWS_PROPAGATION_TIMEOUT = 600
+      AWS_HOSTED_ZONE_ID = var.aws_zone_id
     }
   }
 }
