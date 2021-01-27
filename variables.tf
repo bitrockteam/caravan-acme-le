@@ -1,9 +1,9 @@
 variable "project_id" {
-  type = string
+  type    = string
   default = ""
 }
 variable "google_account_file" {
-  type = string
+  type    = string
   default = ""
 }
 variable "common_name" {

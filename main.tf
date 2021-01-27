@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     acme = {
-      source = "vancluever/acme"
+      source  = "vancluever/acme"
       version = "2.0.0"
     }
   }
@@ -42,11 +42,12 @@ resource "acme_certificate" "certificate" {
       GCE_SERVICE_ACCOUNT_FILE = var.google_account_file
       GCE_POLLING_INTERVAL     = 120
       GCE_PROPAGATION_TIMEOUT  = 600
-      AWS_PROFILE = var.aws_profile
-      AWS_REGION = var.aws_region
-      AWS_POLLING_INTERVAL = 120
-      AWS_PROPAGATION_TIMEOUT = 600
-      AWS_HOSTED_ZONE_ID = var.aws_zone_id
+      AWS_PROFILE              = var.aws_profile
+      AWS_REGION               = var.aws_region
+      //AWS_POLLING_INTERVAL     = 120
+      //AWS_PROPAGATION_TIMEOUT  = 600
+      AWS_HOSTED_ZONE_ID       = var.aws_zone_id
+      //AWS_TTL                  = 30
     }
   }
 }
