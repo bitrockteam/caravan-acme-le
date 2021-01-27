@@ -20,3 +20,9 @@ variable "le_endpoint" {
 variable "private_key" {
   default = ""
 }
+variable "aws_profile" {
+  default = "default"
+}
+variable "aws_region" {
+  default = ""
+}

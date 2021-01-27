@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    acme = {
+      source = "vancluever/acme"
+      version = "2.0.0"
+    }
+  }
+}
+
 provider "acme" {
   server_url = var.le_endpoint
 }
@@ -33,6 +42,10 @@ resource "acme_certificate" "certificate" {
       GCE_SERVICE_ACCOUNT_FILE = "${var.google_account_file}"
       GCE_POLLING_INTERVAL     = 240
       GCE_PROPAGATION_TIMEOUT  = 600
+      AWS_PROFILE = "${var.aws_profile}"
+      AWS_REGION = "${var.aws_region}"
+      AWS_POLLING_INTERVAL = 240
+      AWS_PROPAGATION_TIMEOUT = 600
     }
   }
 }
