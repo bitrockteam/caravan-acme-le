@@ -40,11 +40,11 @@ resource "acme_certificate" "certificate" {
     config = {
       GCE_PROJECT              = var.project_id
       GCE_SERVICE_ACCOUNT_FILE = var.google_account_file
-      GCE_POLLING_INTERVAL     = 30
+      GCE_POLLING_INTERVAL     = 120
       GCE_PROPAGATION_TIMEOUT  = 600
       AWS_PROFILE = var.aws_profile
       AWS_REGION = var.aws_region
-      AWS_POLLING_INTERVAL = 30
+      AWS_POLLING_INTERVAL = 120
       AWS_PROPAGATION_TIMEOUT = 600
       AWS_HOSTED_ZONE_ID = var.aws_zone_id
     }
