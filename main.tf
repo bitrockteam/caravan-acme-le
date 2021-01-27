@@ -38,12 +38,12 @@ resource "acme_certificate" "certificate" {
   dns_challenge {
     provider = var.dns_provider
     config = {
-      GCE_PROJECT              = "${var.project_id}"
-      GCE_SERVICE_ACCOUNT_FILE = "${var.google_account_file}"
+      GCE_PROJECT              = var.project_id
+      GCE_SERVICE_ACCOUNT_FILE = var.google_account_file
       GCE_POLLING_INTERVAL     = 240
       GCE_PROPAGATION_TIMEOUT  = 600
-      AWS_PROFILE = "${var.aws_profile}"
-      AWS_REGION = "${var.aws_region}"
+      AWS_PROFILE = var.aws_profile
+      AWS_REGION = var.aws_region
       AWS_POLLING_INTERVAL = 240
       AWS_PROPAGATION_TIMEOUT = 600
     }
