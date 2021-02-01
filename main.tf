@@ -9,6 +9,10 @@ terraform {
 
 locals {
   le_endpoint = var.use_le_staging ? var.le_staging_endpoint : var.le_production_endpoint
+  cloud_to_dns_provider_map = {
+    "gcp" : "gcloud"
+    "aws" : "route53"
+  }
 }
 
 provider "acme" {
@@ -40,7 +44,7 @@ resource "acme_certificate" "certificate" {
   certificate_request_pem = tls_cert_request.req.cert_request_pem
 
   dns_challenge {
-    provider = var.dns_provider
+    provider = local.cloud_to_dns_provider_map[var.dns_provider]
     config = {
       // GCP
       GCE_PROJECT              = var.gcp_project_id
