@@ -7,8 +7,12 @@ terraform {
   }
 }
 
+locals {
+  le_endpoint = var.use_le_staging ? var.le_staging_endpoint : var.le_production_endpoint
+}
+
 provider "acme" {
-  server_url = var.le_endpoint
+  server_url = local.le_endpoint
 }
 
 resource "tls_private_key" "private_key" {
@@ -42,11 +46,11 @@ resource "acme_certificate" "certificate" {
       GCE_SERVICE_ACCOUNT_FILE = var.google_account_file
       # GCE_POLLING_INTERVAL     = 120
       # GCE_PROPAGATION_TIMEOUT  = 600
-      AWS_PROFILE              = var.aws_profile
-      AWS_REGION               = var.aws_region
+      AWS_PROFILE = var.aws_profile
+      AWS_REGION  = var.aws_region
       //AWS_POLLING_INTERVAL     = 120
       //AWS_PROPAGATION_TIMEOUT  = 600
-      AWS_HOSTED_ZONE_ID       = var.aws_zone_id
+      AWS_HOSTED_ZONE_ID = var.aws_zone_id
       //AWS_TTL                  = 30
     }
   }

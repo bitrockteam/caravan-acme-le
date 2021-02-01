@@ -16,8 +16,11 @@ variable "email_address" {
 variable "dns_provider" {
   type = string
 }
-variable "le_endpoint" {
-  default = ""
+variable "le_staging_endpoint" {
+  default = "https://acme-staging-v02.api.letsencrypt.org/directory"
+}
+variable "le_production_endpoint" {
+  default = "https://acme-v02.api.letsencrypt.org/directory"
 }
 variable "private_key" {
   default = ""
@@ -30,4 +33,8 @@ variable "aws_region" {
 }
 variable "aws_zone_id" {
   default = ""
+}
+variable "use_le_staging" {
+  type    = bool
+  default = false
 }
