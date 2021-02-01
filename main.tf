@@ -7,8 +7,16 @@ terraform {
   }
 }
 
+locals {
+  le_endpoint = var.use_le_staging ? var.le_staging_endpoint : var.le_production_endpoint
+  cloud_to_dns_provider_map = {
+    "gcp" : "gcloud"
+    "aws" : "route53"
+  }
+}
+
 provider "acme" {
-  server_url = var.le_endpoint
+  server_url = local.le_endpoint
 }
 
 resource "tls_private_key" "private_key" {
@@ -36,18 +44,16 @@ resource "acme_certificate" "certificate" {
   certificate_request_pem = tls_cert_request.req.cert_request_pem
 
   dns_challenge {
-    provider = var.dns_provider
+    provider = local.cloud_to_dns_provider_map[var.dns_provider]
     config = {
-      GCE_PROJECT              = var.project_id
-      GCE_SERVICE_ACCOUNT_FILE = var.google_account_file
-      # GCE_POLLING_INTERVAL     = 120
-      # GCE_PROPAGATION_TIMEOUT  = 600
-      AWS_PROFILE              = var.aws_profile
-      AWS_REGION               = var.aws_region
-      //AWS_POLLING_INTERVAL     = 120
-      //AWS_PROPAGATION_TIMEOUT  = 600
-      AWS_HOSTED_ZONE_ID       = var.aws_zone_id
-      //AWS_TTL                  = 30
+      // GCP
+      GCE_PROJECT              = var.gcp_project_id
+      GCE_SERVICE_ACCOUNT_FILE = var.gcp_service_account_file
+
+      // AWS
+      AWS_PROFILE        = var.aws_profile
+      AWS_REGION         = var.aws_region
+      AWS_HOSTED_ZONE_ID = var.aws_zone_id
     }
   }
 }
