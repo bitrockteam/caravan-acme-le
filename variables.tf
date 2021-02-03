@@ -31,6 +31,16 @@ variable "dns_provider" {
     error_message = "Unsupported dns_provider."
   }
 }
+variable "dns_propagation_timeout" {
+  type        = string
+  default     = ""
+  description = "The DNS propagation timeout"
+}
+variable "dns_polling_interval" {
+  type        = string
+  default     = ""
+  description = "The DNS polling interval"
+}
 
 // GCLOUD
 variable "gcp_project_id" {
