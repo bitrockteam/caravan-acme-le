@@ -58,6 +58,12 @@ resource "acme_certificate" "certificate" {
       AWS_PROFILE        = var.aws_profile
       AWS_REGION         = var.aws_region
       AWS_HOSTED_ZONE_ID = var.aws_zone_id
+
+      // AZURE
+      AZURE_TENANT_ID      = var.azure_tenant_id
+      AZURE_RESOURCE_GROUP = var.azure_resource_group
+      AZURE_CLIENT_ID      = var.azure_client_id
+      AZURE_CLIENT_SECRET  = var.azure_client_secret
     }
   }
 }
