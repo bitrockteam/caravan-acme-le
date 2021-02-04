@@ -38,7 +38,14 @@ resource "tls_cert_request" "req" {
   }
 }
 
+resource "null_resource" "dns_check" {
+  provisioner "local-exec" {
+    command = "while [[ `nslookup -type=SOA ${var.common_name} | grep -i \"can\\'t\"` ]]; do printf 'Still checking..'; sleep 5; done"
+  }
+}
+
 resource "acme_certificate" "certificate" {
+  depends_on = [ null_resource.dns_check ]
 
   account_key_pem         = acme_registration.reg.account_key_pem
   certificate_request_pem = tls_cert_request.req.cert_request_pem
