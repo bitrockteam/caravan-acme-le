@@ -32,6 +32,13 @@ resource "null_resource" "dns_check" {
   }
 }
 
+locals {
+  cloud_to_dns_provider_map = {
+    "gcp" : "gcloud"
+    "aws" : "route53"
+  }
+}
+
 resource "acme_certificate" "certificate" {
   depends_on = [ null_resource.dns_check ]
 
