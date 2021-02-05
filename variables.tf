@@ -6,20 +6,6 @@ variable "email_address" {
   type    = string
   default = "letsencrypt@example.it"
 }
-variable "use_le_staging" {
-  type    = bool
-  default = false
-}
-variable "le_staging_endpoint" {
-  type        = string
-  default     = "https://acme-staging-v02.api.letsencrypt.org/directory"
-  description = "LE's endpoint when use_le_staging==true"
-}
-variable "le_production_endpoint" {
-  type        = string
-  default     = "https://acme-v02.api.letsencrypt.org/directory"
-  description = "LE's endpoint when use_le_staging==false"
-}
 variable "private_key" {
   type        = string
   description = "Private key pem"

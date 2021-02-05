@@ -7,18 +7,6 @@ terraform {
   }
 }
 
-locals {
-  le_endpoint = var.use_le_staging ? var.le_staging_endpoint : var.le_production_endpoint
-  cloud_to_dns_provider_map = {
-    "gcp" : "gcloud"
-    "aws" : "route53"
-  }
-}
-
-provider "acme" {
-  server_url = local.le_endpoint
-}
-
 resource "tls_private_key" "private_key" {
   algorithm = "RSA"
 }
