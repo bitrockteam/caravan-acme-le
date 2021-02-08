@@ -36,11 +36,12 @@ locals {
   cloud_to_dns_provider_map = {
     "gcp" : "gcloud"
     "aws" : "route53"
+    "azure" : "azure"
   }
 }
 
 resource "acme_certificate" "certificate" {
-  depends_on = [ null_resource.dns_check ]
+  depends_on = [null_resource.dns_check]
 
   account_key_pem         = acme_registration.reg.account_key_pem
   certificate_request_pem = tls_cert_request.req.cert_request_pem
