@@ -9,6 +9,11 @@ variable "email_address" {
 variable "private_key" {
   type        = string
   description = "Private key pem"
+  default     = null
+}
+variable "from_csr" {
+  type    = bool
+  default = true
 }
 variable "dns_provider" {
   type = string
