@@ -59,7 +59,7 @@ variable "aws_zone_id" {
 
 // Azure
 variable "azure_subscription_id" {
-  type = string
+  type    = string
   default = ""
 }
 variable "azure_tenant_id" {
