@@ -43,6 +43,8 @@ jobs:
 
       - name: Terraform Validate
         id: validate
+        env:
+          ACME_SERVER_URL: http://localhost
         run: terraform validate
 
       - name: Bump version and push tag
