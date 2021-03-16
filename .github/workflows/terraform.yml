@@ -42,9 +42,9 @@ jobs:
         run: terraform init -backend=false
 
       - name: Terraform Validate
-        id: validate
         env:
           ACME_SERVER_URL: http://localhost
+        id: validate
         run: terraform validate
 
       - name: Bump version and push tag
