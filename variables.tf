@@ -10,6 +10,7 @@ variable "private_key" {
   type        = string
   description = "Private key pem"
   default     = null
+  sensitive   = true
 }
 variable "from_csr" {
   type    = bool
@@ -80,8 +81,9 @@ variable "azure_client_id" {
   default = ""
 }
 variable "azure_client_secret" {
-  type    = string
-  default = ""
+  type      = string
+  default   = ""
+  sensitive = true
 }
 variable "azure_environment" {
   type    = string

@@ -5,60 +5,61 @@
 
 | Name | Version |
 |------|---------|
-| acme | 2.1.2 |
+| <a name="requirement_acme"></a> [acme](#requirement\_acme) | 2.1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| acme | 2.1.2 |
-| null | n/a |
-| tls | n/a |
+| <a name="provider_acme"></a> [acme](#provider\_acme) | 2.1.2 |
+| <a name="provider_null"></a> [null](#provider\_null) | n/a |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [acme_certificate](https://registry.terraform.io/providers/vancluever/acme/2.1.2/docs/resources/certificate) |
-| [acme_registration](https://registry.terraform.io/providers/vancluever/acme/2.1.2/docs/resources/registration) |
-| [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
-| [tls_cert_request](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request) |
-| [tls_private_key](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) |
+| Name | Type |
+|------|------|
+| [acme_certificate.certificate_auto](https://registry.terraform.io/providers/vancluever/acme/2.1.2/docs/resources/certificate) | resource |
+| [acme_certificate.certificate_from_csr](https://registry.terraform.io/providers/vancluever/acme/2.1.2/docs/resources/certificate) | resource |
+| [acme_registration.reg](https://registry.terraform.io/providers/vancluever/acme/2.1.2/docs/resources/registration) | resource |
+| [null_resource.dns_check](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [tls_cert_request.req](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request) | resource |
+| [tls_private_key.private_key](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| common\_name | Common | `string` | n/a | yes |
-| dns\_provider | n/a | `string` | n/a | yes |
-| aws\_profile | When using dns\_provider==aws, the AWS profile name | `string` | `"default"` | no |
-| aws\_region | When using dns\_provider==aws, the AWS region | `string` | `""` | no |
-| aws\_zone\_id | When using dns\_provider==aws, the AWS zone id | `string` | `""` | no |
-| azure\_client\_id | n/a | `string` | `""` | no |
-| azure\_client\_secret | n/a | `string` | `""` | no |
-| azure\_environment | n/a | `string` | `"public"` | no |
-| azure\_resource\_group | n/a | `string` | `""` | no |
-| azure\_subscription\_id | Azure | `string` | `""` | no |
-| azure\_tenant\_id | n/a | `string` | `""` | no |
-| dns\_polling\_interval | The DNS polling interval | `string` | `""` | no |
-| dns\_propagation\_timeout | The DNS propagation timeout | `string` | `""` | no |
-| email\_address | n/a | `string` | `"letsencrypt@example.it"` | no |
-| from\_csr | n/a | `bool` | `true` | no |
-| gcp\_project\_id | When using dns\_provider==gcp, the GCP projec ID | `string` | `""` | no |
-| gcp\_service\_account\_file | When using dns\_provider==gcp, the GCP service account file | `string` | `""` | no |
-| private\_key | Private key pem | `string` | `null` | no |
+| <a name="input_common_name"></a> [common\_name](#input\_common\_name) | Common | `string` | n/a | yes |
+| <a name="input_dns_provider"></a> [dns\_provider](#input\_dns\_provider) | n/a | `string` | n/a | yes |
+| <a name="input_aws_profile"></a> [aws\_profile](#input\_aws\_profile) | When using dns\_provider==aws, the AWS profile name | `string` | `"default"` | no |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | When using dns\_provider==aws, the AWS region | `string` | `""` | no |
+| <a name="input_aws_zone_id"></a> [aws\_zone\_id](#input\_aws\_zone\_id) | When using dns\_provider==aws, the AWS zone id | `string` | `""` | no |
+| <a name="input_azure_client_id"></a> [azure\_client\_id](#input\_azure\_client\_id) | n/a | `string` | `""` | no |
+| <a name="input_azure_client_secret"></a> [azure\_client\_secret](#input\_azure\_client\_secret) | n/a | `string` | `""` | no |
+| <a name="input_azure_environment"></a> [azure\_environment](#input\_azure\_environment) | n/a | `string` | `"public"` | no |
+| <a name="input_azure_resource_group"></a> [azure\_resource\_group](#input\_azure\_resource\_group) | n/a | `string` | `""` | no |
+| <a name="input_azure_subscription_id"></a> [azure\_subscription\_id](#input\_azure\_subscription\_id) | Azure | `string` | `""` | no |
+| <a name="input_azure_tenant_id"></a> [azure\_tenant\_id](#input\_azure\_tenant\_id) | n/a | `string` | `""` | no |
+| <a name="input_dns_polling_interval"></a> [dns\_polling\_interval](#input\_dns\_polling\_interval) | The DNS polling interval | `string` | `""` | no |
+| <a name="input_dns_propagation_timeout"></a> [dns\_propagation\_timeout](#input\_dns\_propagation\_timeout) | The DNS propagation timeout | `string` | `""` | no |
+| <a name="input_email_address"></a> [email\_address](#input\_email\_address) | n/a | `string` | `"letsencrypt@example.it"` | no |
+| <a name="input_from_csr"></a> [from\_csr](#input\_from\_csr) | n/a | `bool` | `true` | no |
+| <a name="input_gcp_project_id"></a> [gcp\_project\_id](#input\_gcp\_project\_id) | When using dns\_provider==gcp, the GCP projec ID | `string` | `""` | no |
+| <a name="input_gcp_service_account_file"></a> [gcp\_service\_account\_file](#input\_gcp\_service\_account\_file) | When using dns\_provider==gcp, the GCP service account file | `string` | `""` | no |
+| <a name="input_private_key"></a> [private\_key](#input\_private\_key) | Private key pem | `string` | `null` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| certificate\_p12 | n/a |
-| certificate\_p12\_password | n/a |
-| certificate\_pem | n/a |
-| issuer\_pem | n/a |
-| private\_key\_pem | n/a |
+| <a name="output_certificate_p12"></a> [certificate\_p12](#output\_certificate\_p12) | n/a |
+| <a name="output_certificate_p12_password"></a> [certificate\_p12\_password](#output\_certificate\_p12\_password) | n/a |
+| <a name="output_certificate_pem"></a> [certificate\_pem](#output\_certificate\_pem) | n/a |
+| <a name="output_issuer_pem"></a> [issuer\_pem](#output\_issuer\_pem) | n/a |
+| <a name="output_private_key_pem"></a> [private\_key\_pem](#output\_private\_key\_pem) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
