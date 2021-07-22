@@ -1,5 +1,7 @@
 # Caravan ACME LE
 
+This module uses Let's Encrypt to generate a TLS key and certificate pair.
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
