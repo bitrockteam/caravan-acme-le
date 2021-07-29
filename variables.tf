@@ -82,7 +82,7 @@ variable "azure_client_id" {
 }
 variable "azure_client_secret" {
   type      = string
-  default   = ""
+  default   = null
   sensitive = true
 }
 variable "azure_environment" {
