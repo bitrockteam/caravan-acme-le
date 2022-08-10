@@ -20,7 +20,6 @@ resource "acme_registration" "reg" {
 resource "tls_cert_request" "req" {
   count = local.private_key_provided ? 1 : 0
 
-  key_algorithm   = "RSA"
   private_key_pem = var.private_key
   subject {
     common_name = "*.${var.common_name}"
