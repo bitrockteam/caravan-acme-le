@@ -47,6 +47,7 @@ No modules.
 | <a name="input_azure_resource_group"></a> [azure\_resource\_group](#input\_azure\_resource\_group) | n/a | `string` | `""` | no |
 | <a name="input_azure_subscription_id"></a> [azure\_subscription\_id](#input\_azure\_subscription\_id) | Azure | `string` | `""` | no |
 | <a name="input_azure_tenant_id"></a> [azure\_tenant\_id](#input\_azure\_tenant\_id) | n/a | `string` | `""` | no |
+| <a name="input_disable_complete_propagation"></a> [disable\_complete\_propagation](#input\_disable\_complete\_propagation) | https://registry.terraform.io/providers/vancluever/acme/latest/docs/resources/certificate#about-dns-propagation-checks | `bool` | `false` | no |
 | <a name="input_dns_polling_interval"></a> [dns\_polling\_interval](#input\_dns\_polling\_interval) | The DNS polling interval | `string` | `""` | no |
 | <a name="input_dns_propagation_timeout"></a> [dns\_propagation\_timeout](#input\_dns\_propagation\_timeout) | The DNS propagation timeout | `string` | `""` | no |
 | <a name="input_email_address"></a> [email\_address](#input\_email\_address) | n/a | `string` | `"letsencrypt@example.it"` | no |
@@ -54,6 +55,7 @@ No modules.
 | <a name="input_gcp_project_id"></a> [gcp\_project\_id](#input\_gcp\_project\_id) | When using dns\_provider==gcp, the GCP projec ID | `string` | `""` | no |
 | <a name="input_gcp_service_account_file"></a> [gcp\_service\_account\_file](#input\_gcp\_service\_account\_file) | When using dns\_provider==gcp, the GCP service account file | `string` | `""` | no |
 | <a name="input_private_key"></a> [private\_key](#input\_private\_key) | Private key pem | `string` | `null` | no |
+| <a name="input_recursive_nameservers"></a> [recursive\_nameservers](#input\_recursive\_nameservers) | DNS servers to check | `list(string)` | <pre>[<br>  "1.1.1.1:53",<br>  "8.8.8.8:53",<br>  "208.67.222.222:53",<br>  "208.67.220.220:53"<br>]</pre> | no |
 
 ## Outputs
 

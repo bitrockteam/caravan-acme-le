@@ -34,6 +34,19 @@ variable "dns_polling_interval" {
   description = "The DNS polling interval"
 }
 
+
+variable "recursive_nameservers" {
+  type        = list(string)
+  default     = ["1.1.1.1:53", "8.8.8.8:53", "208.67.222.222:53", "208.67.220.220:53"]
+  description = "DNS servers to check"
+}
+variable "disable_complete_propagation" {
+  type        = bool
+  default     = false
+  description = "https://registry.terraform.io/providers/vancluever/acme/latest/docs/resources/certificate#about-dns-propagation-checks"
+
+}
+
 // GCLOUD
 variable "gcp_project_id" {
   type        = string
