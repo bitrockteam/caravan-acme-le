@@ -7,15 +7,15 @@ This module uses Let's Encrypt to generate a TLS key and certificate pair.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_acme"></a> [acme](#requirement\_acme) | 2.1.2 |
+| <a name="requirement_acme"></a> [acme](#requirement\_acme) | 2.10.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_acme"></a> [acme](#provider\_acme) | 2.1.2 |
-| <a name="provider_null"></a> [null](#provider\_null) | n/a |
-| <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
+| <a name="provider_acme"></a> [acme](#provider\_acme) | 2.10.0 |
+| <a name="provider_null"></a> [null](#provider\_null) | 3.1.1 |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | 4.0.1 |
 
 ## Modules
 
@@ -25,9 +25,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [acme_certificate.certificate_auto](https://registry.terraform.io/providers/vancluever/acme/2.1.2/docs/resources/certificate) | resource |
-| [acme_certificate.certificate_from_csr](https://registry.terraform.io/providers/vancluever/acme/2.1.2/docs/resources/certificate) | resource |
-| [acme_registration.reg](https://registry.terraform.io/providers/vancluever/acme/2.1.2/docs/resources/registration) | resource |
+| [acme_certificate.certificate_auto](https://registry.terraform.io/providers/vancluever/acme/2.10.0/docs/resources/certificate) | resource |
+| [acme_certificate.certificate_from_csr](https://registry.terraform.io/providers/vancluever/acme/2.10.0/docs/resources/certificate) | resource |
+| [acme_registration.reg](https://registry.terraform.io/providers/vancluever/acme/2.10.0/docs/resources/registration) | resource |
 | [null_resource.dns_check](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [tls_cert_request.req](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/cert_request) | resource |
 | [tls_private_key.private_key](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
@@ -42,7 +42,7 @@ No modules.
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | When using dns\_provider==aws, the AWS region | `string` | `""` | no |
 | <a name="input_aws_zone_id"></a> [aws\_zone\_id](#input\_aws\_zone\_id) | When using dns\_provider==aws, the AWS zone id | `string` | `""` | no |
 | <a name="input_azure_client_id"></a> [azure\_client\_id](#input\_azure\_client\_id) | n/a | `string` | `""` | no |
-| <a name="input_azure_client_secret"></a> [azure\_client\_secret](#input\_azure\_client\_secret) | n/a | `string` | `""` | no |
+| <a name="input_azure_client_secret"></a> [azure\_client\_secret](#input\_azure\_client\_secret) | n/a | `string` | `null` | no |
 | <a name="input_azure_environment"></a> [azure\_environment](#input\_azure\_environment) | n/a | `string` | `"public"` | no |
 | <a name="input_azure_resource_group"></a> [azure\_resource\_group](#input\_azure\_resource\_group) | n/a | `string` | `""` | no |
 | <a name="input_azure_subscription_id"></a> [azure\_subscription\_id](#input\_azure\_subscription\_id) | Azure | `string` | `""` | no |

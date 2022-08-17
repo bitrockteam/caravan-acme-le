@@ -1,7 +1,8 @@
 repos:
-  - repo: git://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.45.0
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.74.1
     hooks:
       - id: terraform_fmt
       - id: terraform_docs
-        args: ['--args=--sort-by-required']
+        args: ['--args=--sort-by required']
+      - id: terraform_validate

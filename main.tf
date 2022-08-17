@@ -2,7 +2,7 @@ terraform {
   required_providers {
     acme = {
       source  = "vancluever/acme"
-      version = "2.1.2"
+      version = "2.10.0"
     }
   }
 }
@@ -68,7 +68,7 @@ resource "acme_certificate" "certificate_from_csr" {
   account_key_pem         = acme_registration.reg.account_key_pem
   certificate_request_pem = tls_cert_request.req[0].cert_request_pem
 
-  recursive_nameservers = ["8.8.8.8:53", "208.67.222.222:53", "208.67.220.220:53"]
+  recursive_nameservers = ["1.1.1.1:53", "8.8.8.8:53", "208.67.222.222:53", "208.67.220.220:53"]
 
   dns_challenge {
     provider = local.cloud_to_dns_provider_map[var.dns_provider]
@@ -83,7 +83,7 @@ resource "acme_certificate" "certificate_auto" {
   account_key_pem = acme_registration.reg.account_key_pem
   common_name     = "*.${var.common_name}"
 
-  recursive_nameservers = ["8.8.8.8:53", "208.67.222.222:53", "208.67.220.220:53"]
+  recursive_nameservers = ["1.1.1.1:53", "8.8.8.8:53", "208.67.222.222:53", "208.67.220.220:53"]
 
   dns_challenge {
     provider = local.cloud_to_dns_provider_map[var.dns_provider]
